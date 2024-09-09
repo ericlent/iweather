@@ -1,6 +1,6 @@
 import { getNextDays } from "./getNextDays";
 
-test("should return the next five days", () => {
+it("should return the next five days", () => {
     const days = getNextDays();
     console.log(days);
     
