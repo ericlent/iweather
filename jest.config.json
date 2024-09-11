@@ -10,5 +10,18 @@
     "transform": {
         "^.+\\.jsx?$": "babel-jest",
         "^.+\\.svg$": "jest-transformer-svg"
-    }
+    },
+    "collectCoverageFrom": [
+        "./src/**/*.{ts,tsx}",
+        "!./src/**/styles.ts"
+    ],
+    "testPathIgnorePatterns": [
+        "./__tests__/mocks",
+        "./__tests__/utils"
+    ],
+    "coveragePathIgnorePatterns": [
+        "./src/@types",
+        "./src/styles",
+        "./src/libs/dayjs"
+    ]
 }
