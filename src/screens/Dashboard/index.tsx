@@ -20,10 +20,10 @@ export function Dashboard() {
   const [isWeatherLoading, setWeatherIsLoading] = useState(true);
   const [weather, setWeather] = useState<WeatherResponseProps>({} as WeatherResponseProps);
 
-  const { city, handleChanceCity, cityIsLoading } = useCity();
+  const { city, handleChangeCity, cityIsLoading } = useCity();
 
   function handleSelect(value: CityProps) {
-    handleChanceCity(value);
+    handleChangeCity(value);
     setSearch('');
     setCities([]);
   }

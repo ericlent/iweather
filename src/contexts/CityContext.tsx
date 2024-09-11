@@ -10,7 +10,7 @@ type CityContextProviderProps = {
 type CityContextDataProps = {
   cityIsLoading: boolean;
   city: CityProps | null;
-  handleChanceCity: (city: CityProps) => void;
+  handleChangeCity: (city: CityProps) => void;
 }
 
 export const CityContext = createContext<CityContextDataProps>({} as CityContextDataProps);
@@ -19,7 +19,7 @@ export function CityProvider({ children }: CityContextProviderProps) {
   const [cityIsLoading, setCityIsLoading] = useState(true);
   const [city, setCity] = useState<CityProps | null>(null);
 
-  async function handleChanceCity(selectedCity: CityProps) {
+  async function handleChangeCity(selectedCity: CityProps) {
     setCityIsLoading(true);
 
     await saveStorageCity(selectedCity);
@@ -40,7 +40,7 @@ export function CityProvider({ children }: CityContextProviderProps) {
     <CityContext.Provider value={{
       city,
       cityIsLoading,
-      handleChanceCity
+      handleChangeCity
     }}>
       {children}
     </CityContext.Provider>

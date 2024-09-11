@@ -15,7 +15,7 @@ export function Search() {
   const [isLoading, setIsLoading] = useState(false);
   const [cities, setCities] = useState<CityProps[]>([]);
 
-  const { handleChanceCity } = useCity();
+  const { handleChangeCity } = useCity();
 
   async function getCities(city: string) {
     setIsLoading(true);
@@ -54,7 +54,7 @@ export function Search() {
             data={cities}
             onChange={setSearch}
             isLoading={isLoading}
-            onPress={handleChanceCity}
+            onPress={handleChangeCity}
             placeholder="Buscar local"
           />
         </View>
