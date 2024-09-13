@@ -1,21 +1,15 @@
 {
   "cli": {
-    "version": ">= 12.3.0",
-    "appVersionSource": "remote"
+    "version": ">= 12.3.0"
   },
   "build": {
-    "development": {
-      "developmentClient": true,
-      "distribution": "internal"
-    },
     "preview": {
-      "distribution": "internal"
-    },
-    "production": {
-      "autoIncrement": true
+      "android": {
+        "buildType": "apk"
+      },
+      "env": {
+        "EXPO_PUBLIC_WEATHER_APP_ID": "dc6835eec4b12e541e7319090f528f83"
+      }
     }
-  },
-  "submit": {
-    "production": {}
   }
 }
